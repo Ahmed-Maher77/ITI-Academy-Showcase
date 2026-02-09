@@ -6,7 +6,7 @@ A modern, fully-responsive single-page landing application showcasing the Inform
 
 ## 🌐 Live Preview
 
-👀 **Watch Live Demo:**  **[https://your-deployment-url.vercel.app](https://your-deployment-url.vercel.app)**
+👀 **Watch Live Demo:**  **[https://ahmed-maher77.github.io/ITI-Academy-Showcase/](https://ahmed-maher77.github.io/ITI-Academy-Showcase/)**
 
 ---
 
@@ -79,8 +79,8 @@ A modern, fully-responsive single-page landing application showcasing the Inform
 
 ## 📸 Website Preview
 
-<a href="website-url" title="demo">
-  <img src="uploaded-img-on-github-readme" alt="website preview - Demo - UI Mockup" width="400">
+<a href="https://ahmed-maher77.github.io/ITI-Academy-Showcase/" title="demo">
+  <img src="https://github.com/user-attachments/assets/4a7172fa-3cee-4579-a19d-db8b3127188c" alt="website preview - Demo - UI Mockup" width="400">
 </a>
 
 ---
@@ -90,25 +90,18 @@ A modern, fully-responsive single-page landing application showcasing the Inform
 ```
 Task02/
 ├── index.html              # Main HTML file with semantic structure
-├── package.json            # NPM dependencies and project metadata
-├── README.md              # Project documentation
+├── packages/               # project dependencies
+    └── bootstrap/
+        ├── dist/
+        │   ├── css/       # Bootstrap CSS framework
+        │   └── js/        # Bootstrap JavaScript bundle
+├── README.md               # Project documentation
 │
 ├── css/
 │   └── style.css          # Custom styles (variables, animations, responsive design)
 │
 ├── images/                # Image assets
-│   ├── iti-logo.png       # ITI Academy logo
-│   ├── experts.jpg        # Feature card images
-│   ├── tech-world.jpg     # Navigation sidebar images
-│   ├── ai.jpg
-│   ├── tech.jpg
-│   └── My_Picture_2.jpg   # Testimonial profile pictures
-│
-└── node_modules/          # NPM packages (Bootstrap)
-    └── bootstrap/
-        ├── dist/
-        │   ├── css/       # Bootstrap CSS framework
-        │   └── js/        # Bootstrap JavaScript bundle
+
 ```
 
 ### Folder Descriptions
