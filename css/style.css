@@ -1,0 +1,444 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Noto+Sans+Georgian:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Variables */
+:root {
+    --main-bg-color: #eee;
+    --main-shadow-color: #dadada;
+    --white-color: #fff;
+    --grey-color: #616161;
+}
+
+/* ========== Base Styles ========== */
+body {
+    font-family: "Noto Sans Georgian", sans-serif;
+    font-optical-sizing: auto;
+    background: var(--main-bg-color);
+}
+
+/* Page Loader */
+#pageLoader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a1d29 0%, #2d3748 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition:
+        opacity 0.5s ease,
+        visibility 0.5s ease;
+}
+
+/* ========== Fade out effect ========== */
+#pageLoader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+/* ========== Spinner container ========== */
+.spinner {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    margin: 0 auto 30px;
+}
+
+/* ========== Animated bouncing circles ========== */
+.double-bounce1,
+.double-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #4a90e2;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+/* ========== Second circle with delay ========== */
+.double-bounce2 {
+    animation-delay: -1s;
+    background-color: #2ecc71;
+}
+
+/* ========== Bounce animation ========== */
+@keyframes bounce {
+    0%,
+    100% {
+        transform: scale(0);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+}
+
+/* ========== Loader title ========== */
+.loader-text {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    animation: fadeInOut 2s infinite;
+}
+
+/* ========== Loader subtitle ========== */
+.loader-subtitle {
+    color: #b8c1d9;
+    font-size: 1rem;
+    font-weight: 400;
+    animation: fadeInOut 2s infinite 0.5s;
+}
+
+/* ========== Fade in/out animation ========== */
+@keyframes fadeInOut {
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* ============= Reusable Styles ============= */
+/* Custom gap size */
+.gap-3-5 {
+    gap: 1.2rem;
+}
+/* Small text size */
+.font-small {
+    font-size: 0.9rem;
+}
+/* Grey text color */
+.grey-color {
+    color: var(--grey-color);
+}
+
+/* ========== Top Navigation Bar ========== */
+#mainNav {
+    background-color: #1a1d29 !important;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 0.8rem 0;
+    backdrop-filter: blur(10px);
+}
+
+/* ========== Logo/brand styling ========== */
+#mainNav .navbar-brand {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #ffffff !important;
+    transition: all 0.3s ease;
+}
+
+#mainNav .navbar-brand:hover {
+    color: #4a90e2 !important;
+    /* transform: translateX(3px); */
+}
+
+/* ========== Navigation links ========== */
+#mainNav .nav-link {
+    position: relative;
+    color: #b8c1d9 !important;
+    font-weight: 500;
+    padding: 0.5rem 1.2rem !important;
+    margin: 0 0.2rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+#mainNav .nav-link:hover,
+#mainNav .nav-link.active {
+    color: #ffffff !important;
+    background-color: rgba(74, 144, 226, 0.1);
+}
+
+#mainNav .nav-link:hover::before {
+    width: 60%;
+}
+
+#mainNav .nav-link.active::before {
+    width: 0;
+}
+
+/* ========== Mobile menu toggle ========== */
+#mainNav .navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+}
+
+#mainNav .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* ========== Sidebar Navbar ========== */
+/* Decorative shape */
+#main-navbar .shape {
+    width: 80px;
+    height: 65px;
+    background-color: var(--main-shadow-color);
+    position: relative;
+}
+/* Shape overlay */
+#main-navbar .shape::before {
+    content: "";
+    position: absolute;
+    bottom: -51px;
+    left: 1.5px;
+    width: 78px;
+    height: 74px;
+    background-color: var(--main-bg-color);
+    border-radius: 50%;
+}
+/* ========== Sidebar images ========== */
+#main-navbar figure {
+    transition: all 0.5s ease;
+}
+/* ========== Rotate on hover ========== */
+#main-navbar figure:hover {
+    rotate: 360deg;
+}
+#main-navbar figure img {
+    width: 80px;
+    height: 80px;
+}
+#main-navbar figure img,
+#testimonials figure img {
+    box-shadow: 0 0 1px 4.5px var(--main-shadow-color);
+}
+
+/* ========== Features Section ==========   */
+/* Card label badges */
+#features .label {
+    right: 8px;
+    top: 8px;
+}
+/* Feature links */
+#features a {
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+#features a svg {
+    min-width: fit-content;
+}
+#features a,
+#features a svg {
+    transition: transform 0.5s ease;
+}
+#features a:hover,
+#features a:hover svg {
+    color: rgb(0, 61, 101) !important;
+}
+#features a:hover svg {
+    transform: rotate(360deg);
+}
+
+/* ========== Card Styles ========== */
+/* Responsive card title */
+.card .card-title {
+    font-size: clamp(1.3rem, 2vw, 1.4rem) !important;
+}
+/* Text truncation (3 lines) */
+.card .card-body p {
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+/* ========== Testimonials Section ========== */
+/* Avatar size */
+#testimonials .card img {
+    width: 60px;
+    height: 60px;
+}
+/* Contact button */
+#testimonials .card a {
+    width: 45px;
+    height: 45px;
+}
+#testimonials .card a svg {
+    transition: all 0.5s ease;
+}
+#testimonials .card a:hover svg {
+    transform: rotate(360deg);
+}
+
+/* ========== Carousel card sizing ========== */
+.carousel-item .card {
+    max-width: 500px;
+    margin: 0 auto;
+}
+.carousel-item,
+.carousel-item .card {
+    background-color: transparent;
+    border: none;
+}
+
+/* Carousel Navigation */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 50px;
+    height: 50px;
+    bottom: -70px;
+    top: auto;
+    background-color: rgba(52, 152, 219, 0.85);
+    border-radius: 50%;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(52, 152, 219, 1);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.5);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 20px;
+    height: 20px;
+    background-size: 100%;
+}
+
+/* Position left button */
+.carousel-control-prev {
+    left: 50%;
+    transform: translateX(-70px);
+}
+
+/* Position right button */
+.carousel-control-next {
+    right: 50%;
+    transform: translateX(70px);
+}
+
+/* ========== Contact Section ========== */
+/* Button sizing */
+#contact .btn {
+    min-width: 138px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Footer Developer Link */
+.developer-link {
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.developer-link:hover {
+    opacity: 1;
+    color: rgba(0, 0, 0, 0.74) !important;
+    transition: 0.2s;
+}
+
+/* ========== Scroll Animations ========== */
+/* Fade up animation */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+/* Active state */
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Slide in from left */
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.fade-in-left.animated {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Slide in from right */
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.fade-in-right.animated {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Scale up animation */
+.scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+.scale-in.animated {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ========== Responsive Design ========== */
+/* Extra small screens */
+@media (max-width: 350px) {
+    #main-navbar figure img {
+        width: 40px;
+        height: 40px;
+    }
+    #main-navbar .shape {
+        display: none;
+    }
+}
+/* Small screens */
+@media (max-width: 576px) {
+    #main-navbar figure img {
+        width: 50px;
+        height: 50px;
+    }
+    #main-navbar .shape {
+        width: 50px;
+        height: 30px;
+    }
+    #main-navbar .shape::before {
+        bottom: -57px;
+        left: 0.5px;
+        width: 49px;
+        height: 74px;
+    }
+}
+/* Tablets */
+@media (max-width: 991px) {
+    #main-navbar .shape {
+        rotate: -90deg;
+    }
+}
